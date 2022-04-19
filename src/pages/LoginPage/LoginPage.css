@@ -1,7 +1,8 @@
-body{
-    background-image: url(../../../public/sunflower.png);
-    background-position: center;
+.login{
+  background-image: url(../../../public/sunflower.png);
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 100vh;
+  min-width: 100%;
+  min-height: 100%;
 }

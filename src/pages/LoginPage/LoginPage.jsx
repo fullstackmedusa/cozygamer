@@ -34,6 +34,7 @@ export default function LoginPage(props) {
 
   return (
     <>
+    <div className="login">
       <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
           <Header as='h2' style={{color: '#6b705c'}}  textAlign='center'>
@@ -54,6 +55,7 @@ export default function LoginPage(props) {
           {error ? <ErrorMessage error={error} /> : null}
         </Grid.Column>
       </Grid>
+      </div>
     </>
   );
 }
