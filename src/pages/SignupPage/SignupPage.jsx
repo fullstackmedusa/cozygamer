@@ -7,8 +7,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function SignUpPage(props) {
   const [error, setError] = useState('')
-  const navigate = useNavigate();
-  const [selectedFile, setSelectedFile] = useState('');
   const [state, setState] = useState({
     username: '',
     email: '',
@@ -16,6 +14,9 @@ export default function SignUpPage(props) {
     passwordConf: '',
   });
 
+  const navigate = useNavigate();
+  const [selectedFile, setSelectedFile] = useState('');
+  
   function handleChange(e) {
     setState({
       ...state,
@@ -47,12 +48,12 @@ export default function SignUpPage(props) {
 
       // use the userService to make the fetch request
       await userService.signup(formData);
-      navigate("/");
+      props.handleSignUpOrLogin()
       // Route to wherever you want!
       // after you get a response from the server from 
       // the signup request, you need to grab the token from 
       // local storage and set the user!
-
+      navigate('/') // < route the user to our home component
 
     } catch (err) {
       // Invalid user data (probably duplicate email)

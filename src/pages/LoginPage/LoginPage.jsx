@@ -42,7 +42,7 @@ export default function LoginPage(props) {
           </Header>
           <Form  autoComplete="off" onSubmit={handleSubmit}>
             <Segment style={{backgroundColor: '#d3cbbb'}} stacked>
-              <Form.Input label='Username' type="email" name="email" placeholder="email" value={state.email} onChange={handleChange} required />
+              <Form.Input label='Email' type="email" name="email" placeholder="email" value={state.email} onChange={handleChange} required />
               <Form.Input label='Password' name="password" type="password" placeholder="password" value={state.password} onChange={handleChange} required />
               <Button style={{backgroundColor: '#6b705c'}} fluid size='large' type="submit" className="btn" disabled={invalidForm} >
                 Login
