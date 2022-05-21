@@ -1,0 +1,42 @@
+
+.detail-page{
+    
+    background-image: url("https://i.imgur.com/1nsPqJz.png");
+    background-size: cover;
+    background-repeat: no-repeat; 
+    border: 3px solid black;
+    min-height: 100vh;
+}
+
+.comment{
+    float:right;
+    padding: 40 px;
+   margin-left: 200px;
+}
+
+.info{
+    background-color: rgba(255,255,255,0.4);
+    margin: 20px;
+    padding:10px;
+        
+}
+
+.overview{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.bottom-left{
+    margin:20px;
+    background-color: rgba(255,255,255,0.4);
+    padding: 10px;
+}
+
+.comments{
+    padding-top: 40px;
+    margin: 20px;
+    
+    
+}

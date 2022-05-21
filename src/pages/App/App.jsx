@@ -5,7 +5,7 @@ import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
 import userService from "../../utils/userService";
 import GamesIndex from "../GamesIndex/GamesIndex";
-
+import GameDetails from "../GameDetails/GameDetails";
 
 function App() {
   const [user, setUser] = useState(userService.getUser()); // getUser decodes our JWT token, into a javascript object
@@ -24,7 +24,9 @@ function App() {
   if (user) {
     return (
       <Routes>
-        <Route path="/" element={<GamesIndex/>} />
+        <Route
+         path="/" 
+        element={<GamesIndex user={user} handleLogout={handleLogout}/>} />
         <Route
           path="/login"
           element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin} />}
@@ -33,6 +35,10 @@ function App() {
           path="/signup"
           element={<SignupPage handleSignUpOrLogin={handleSignUpOrLogin} />}
         />
+        <Route
+        path='/game/:gameid'
+        element={<GameDetails user={user} handleLogout={handleLogout}/>}
+       />
       </Routes>
     );
   }

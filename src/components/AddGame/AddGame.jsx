@@ -3,7 +3,7 @@ import "./AddGame.css"
 import { Button, Form, Grid, Header, Image,  Segment } from 'semantic-ui-react'
 
 export default function AddGameForm(props){
-  const [invalidForm, setValidForm] = useState(false);
+  
   const [selectedFile, setSelectedFile] = useState('')
   const [state, setState] = useState({
     title: '',
@@ -13,16 +13,7 @@ export default function AddGameForm(props){
     releaseYear:'',
     cozyLevel: '',
   })
-  const genreOptions = [
-    { key: '0', value: 'Life Simulation Game', text: 'Life Simulation Game' },
-    { key: '1', value: 'Adventure Game', text: 'Adventure Game' },
-    { key: '2', value: 'Education Simulation', text: 'Education Simulation' },
-    { key: '3', value: 'Indie Game', text: 'Indie Game' },
-    { key: '4', value: 'Role-Playing', text: 'Role-Playing' },
-    { key: '5', value: 'Casual Game', text: 'Casual Game' },
-    { key: '6', value: 'Puzzle Game', text: 'Puzzle Game' },
-    
-  ]
+ 
   
 
   function handleFileInput(e){
@@ -59,7 +50,7 @@ export default function AddGameForm(props){
       <Grid.Column style={{ maxWidth: 450 }}>
         <Segment>
         
-            <Form  autoComplete="off" onSubmit={handleSubmit}>
+            <Form size="small"  autoComplete="off" onSubmit={handleSubmit}>
                
               <Form.Input
                 className="form-control"
@@ -68,6 +59,14 @@ export default function AddGameForm(props){
                 placeholder="upload image of game"
                 onChange={handleFileInput}
               />   
+               <Form.Input
+                  className="form-control"
+                  name="title"
+                  value={state.title}
+                  placeholder="Game Title"
+                  onChange={handleChange}
+                  required
+              />
                <Form.TextArea
                   className="form-control"
                   name="description"
@@ -84,12 +83,11 @@ export default function AddGameForm(props){
                   onChange={handleChange}
                   required
               />
-               <Form.Select
+               <Form.Input
                   className="form-control"
                   name="genre"
-                  options={genreOptions}
                   value={state.genre}
-                  placeholder="Select a genre"
+                  placeholder="Add a genre"
                   onChange={handleChange}
                   required
               />
@@ -107,13 +105,14 @@ export default function AddGameForm(props){
                   name="cozyLevel"
                   value={state.cozyLevel}
                   type='number'
+                  placeholder="1-10 How cozy is this game?"
                   onChange={handleChange}
                   required
               />
               <Button
                 type="submit"
                 className="btn"
-                disabled={invalidForm}
+                
               >
                 ADD A GAME
               </Button>

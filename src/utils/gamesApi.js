@@ -27,3 +27,14 @@ export function getAll() {
 	})
 	.then(res => res.json());
   }
+
+  export function getByID(gameID) {
+	return fetch(`${BASE_URL}${gameID}`, {
+	  headers: {
+		Authorization: "Bearer " + tokenService.getToken(),
+	  },
+	}).then((res) => {
+	  if (res.ok) return res.json();
+	  throw new Error("Problem Fetching By ID", gameID);
+	});
+  }

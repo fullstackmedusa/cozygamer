@@ -1,0 +1,55 @@
+.flexcontainer{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.inner-signup-box-test{
+    position: relative;
+    z-index: 1;
+    float: right;
+}
+
+#modal {
+    /*Position and width*/
+    position: fixed;
+    width: 40%;
+    height: fit-content;
+    
+    /*NOTE: If you want your modal's position to be absolute or fixed, you should also include:*/
+    top: -30;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    /*Centering horizintally*/
+    margin: auto;
+  
+    /* Purely visual stuff
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    background-color: ghostwhite;
+    text-align:center; */
+  }
+
+  #add-game-btn {
+    background-image: url('https://i.imgur.com/pl1NjY5.png');
+    background-size: cover;
+	
+    font-size: small;
+	width: 30%;
+    height: 20%;
+    float:right;
+	border: none;
+    font-weight: 600;
+    margin-right: 20px;
+    padding-bottom: 40px;
+	
+}
+
+.index-page {
+    
+    background-image: url("https://i.imgur.com/cHDRFAM.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}

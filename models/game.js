@@ -2,12 +2,10 @@ const mongoose = require('mongoose');
 
 const gameSchema = mongoose.Schema({
     title: String,
+    photoUrl: String,
     description: String,
     rating: String,
-    genre:{
-        type: String,
-        enum: ["Life Simulation Game", "Adventure Game", "Education Simulation", "Indie Game", "Role-Playing", "Casual Game", "Puzzle Game", "Anime Game"],
-      },
+    genre: String,
     releaseYear: Number,
     cozyLevel: Number,
 })
