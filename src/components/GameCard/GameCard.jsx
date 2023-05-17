@@ -10,7 +10,7 @@ function GameCard({game}) {
   return (
     <Card style={{ height: '600 px', width:'400 px' }}>
     <Segment>
-    <img src={game.photoUrl}  height={200} />
+    <img src={game.photoUrl}  height={200} width={150} />
     </Segment>
     <Card.Content>
       <Card.Header>{game.title}</Card.Header>
